@@ -34,15 +34,13 @@ class App extends Component {
       number: data.number,
     };
 
-    {
-      this.state.contacts.some(contact => contact.name === data.name)
-        ? Notify.info(`${data.name} is already in contacts`, {
-            timeout: 11000,
-          })
-        : this.setState(prevState => ({
-            contacts: [contact, ...prevState.contacts],
-          }));
-    }
+    {this.state.contacts.some(contact => contact.name === data.name)
+      ? Notify.info(`${data.name} is already in contacts`, {
+          timeout: 11000,
+        })
+      : this.setState(prevState => ({
+          contacts: [contact, ...prevState.contacts],
+        }));}
   };
 
   deleteContact = contactId => {
