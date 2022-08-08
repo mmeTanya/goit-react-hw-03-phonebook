@@ -16,7 +16,7 @@ class App extends Component {
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
     if (parsedContacts) {
-      this.setState({contacts : parsedContacts});
+      this.setState({ contacts: parsedContacts });
     }
   }
 
@@ -33,7 +33,7 @@ class App extends Component {
       name: data.name,
       number: data.number,
     };
-
+    
     {
       this.state.contacts.some(contact => contact.name === data.name)
         ? Notify.info(`${data.name} is already in contacts`, {
