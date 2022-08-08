@@ -33,7 +33,7 @@ class App extends Component {
       name: data.name,
       number: data.number,
     };
-    
+
     {
       this.state.contacts.some(contact => contact.name === data.name)
         ? Notify.info(`${data.name} is already in contacts`, {
